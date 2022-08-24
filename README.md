@@ -32,6 +32,17 @@
 1. `psql` - заходим в postgres под superUser
 1. `CREATE DATABASE название OWNER владелец` - создаём БД
 
+1. `\c blog2 bob` -- подключение к бд 
+1. `\l` -- показывает все бд и их владельцев
+1. `\du` -- показывает всех пользователей
+1. `\d` -- посмотреть все таблицы
+
+Сырой запрос:
+`CREATE TABLE users (
+   id serial PRIMARY KEY,
+   nаme varchar(80),
+);
+`
 ## Что сделали
 
 1.  Создали модель командой `npx sequelize-cli model:generate --name User --attributes firstName:string,lastName:string,email:string` (изменили под себя)
