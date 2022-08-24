@@ -36,6 +36,7 @@
 
 1.  Создали модель командой `npx sequelize-cli model:generate --name User --attributes firstName:string,lastName:string,email:string` (изменили под себя)
     - Одновременно с этим создалась миграция
+    - В Миграции прописали связи!!(см.внизу)
     - **Если поменяли что-то в модели - меняем и в миграции**
 1.  Накатили миграцию `npx sequelize-cli db:migrate`
 1.  Если надо откатить `npx sequelize-cli db:migrate:undo:all`
@@ -187,5 +188,22 @@ async function findOrder() {
 findOrder();```
 
 
-
-
+### Сиды
+Сиды заполняют таблицу данными
+Пример:
+``` 
+await queryInterface.bulkInsert(
+      "Users",
+      [
+        {
+          name: "Oleg",
+          favProd: 1,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+      ],
+      {}
+    );
+  },
+  ```
+  
