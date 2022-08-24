@@ -3,6 +3,9 @@
 ## Как начинали работу
 
 1.  `npm init -y` - инициализируем проект node
+1.  `npx create-gitignore node` - инициализируем gitignore(не грузить модули в git)
+1.  `npx eslint --init` - инициализируем eslint
+1.  `npm i jest` - инициализируем Jest, если нужны тесты
 1.  `npm i sequelize pg pg-hstore` - устанавливаем зависимости postgres
 1.  `npm i -D sequelize-cli` - устанавливаем sequelize cli
 1.  создаём файл `.sequelizerc`:
@@ -25,6 +28,9 @@
     "seederStorage": "sequelize",
     "seederStorageTableName": "SequelizeData"
 ```
+1. `sudo -i -u postgres` - открываем postgres
+1. `psql` - заходим в postgres под superUser
+1. `CREATE DATABASE название OWNER владелец` - создаём БД
 
 ## Что сделали
 
@@ -32,6 +38,7 @@
     - Одновременно с этим создалась миграция
     - **Если поменяли что-то в модели - меняем и в миграции**
 1.  Накатили миграцию `npx sequelize-cli db:migrate`
+1.  Если надо откатить `npx sequelize-cli db:migrate:undo:all`
 1.  Создали seeder командой `npx sequelize-cli seed:generate --name demo-user` (изменили под себя)
 
 ## На что обратить внимание
