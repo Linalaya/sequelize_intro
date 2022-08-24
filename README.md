@@ -158,3 +158,34 @@ _Таблица 1_. Связь Many-to-Many.
    ```
 
 1. В миграциях `Cats` и `Dogs` ничего делать не нужно
+
+### Методы в app.js
+
+```const { User, Product, Order } = require("./db/models");
+
+async function findProd() {
+  try {
+    const prod = await Product.findOne({
+      where: { id: 4 },
+      include: User,
+    });
+    console.log(prod);
+  } catch (error) {
+    console.log(error.message);
+  }
+}
+async function findOrder() {
+  try {
+    const order = await Order.findOne({
+      where: { id: 1 },
+    });
+    console.log(order);
+  } catch (error) {
+    console.log(error.message);
+  }
+}
+findOrder();```
+
+
+
+
