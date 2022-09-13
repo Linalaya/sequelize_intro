@@ -9,8 +9,11 @@
 1.  `npm i sequelize pg pg-hstore` - устанавливаем зависимости postgres
 1.  `npm i -D sequelize-cli` - устанавливаем sequelize cli
 
-1.  `...._id` - belongsTo(models.... foreingKey="..._id")
-1.  `id` - hasMany(models.... foreingKey="..._id")
+
+  `...._id` - belongsTo(models.... foreingKey="..._id")
+  `id` - hasMany(models.... foreingKey="..._id")
+
+
 
 1.  создаём файл `.sequelizerc`:
 
