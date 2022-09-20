@@ -1,7 +1,7 @@
 # Sequelize intro
 
 ## Как начинали работу
-
+1.  `npx create-react-app client` - создание клиентского приложения
 1.  `npm init -y` - инициализируем проект node
 1.  `npx create-gitignore node` - инициализируем gitignore(не грузить модули в git)
 1.  `npx eslint --init` - инициализируем eslint
