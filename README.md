@@ -20,12 +20,15 @@
 ```Javascript
  const path = require('path');
  module.exports = {
- 'config': path.resolve('config', 'config.json'),
+ 'config': path.resolve('db', 'config', 'database.json'),
  'models-path': path.resolve('db', 'models'),
  'seeders-path': path.resolve('db', 'seeders'),
  'migrations-path': path.resolve('db', 'migrations')
  };
 ```
+
+(в .sequelizerc вместо config.json прописываю database.json - это позволяет создавать базу данных командой npx sequelize-cli db:create, а не через терминал)
+
 
 1. `npx sequelize-cli init` - создаём структуру для работы с sequelize
 1. В файле `config.json` изменили данные для БД (username, password, database, dialect) на свои. Обратите внимание, что мы ввели разные данные для development и test
