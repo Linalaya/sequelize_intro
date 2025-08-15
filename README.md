@@ -227,5 +227,22 @@ await queryInterface.bulkInsert(
       {}
     );
   },
+
+*из моего файла (почему-то не внесены  createdAt: new Date() и updatedAt: new Date())Ж
+
+module.exports = {
+  async up(queryInterface, Sequelize) {
+    await queryInterface.bulkInsert('Parcels', [
+      { recipient: 'Косарева К. А.', size: 1, lockerId: 6 },
+      { recipient: 'Мельникова Д. Д.', size: 4, lockerId: 3 },
+      { recipient: 'Косарева К. А.', size: 4, lockerId: 6 },
+      { recipient: 'Горшкова Е. Л.', size: 5, lockerId: 7 }], {});
+  },
+
+  async down(queryInterface, Sequelize) {
+    await queryInterface.bulkDelete('Parcels', null, {});
+  },
+};
+
   ```
   
