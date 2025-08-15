@@ -31,13 +31,9 @@
 
 
 1. `npx sequelize-cli init` - создаём структуру для работы с sequelize
-1. В файле `config.json` изменили данные для БД (username, password, database, dialect) на свои. Обратите внимание, что мы ввели разные данные для development и test
-1. Для того, чтобы sequelize следил за сидерами (не накатывались те сидеры, которые уже были добавлены в БД, аналогично миграциям),в файл `config.json` добавили строчки
+1. В файле `config.json`(`database.json`) меняем данные для БД (username, password, database, dialect) на свои. Обратите внимание, что мы ввели разные данные для development и test
 
-```
-    "seederStorage": "sequelize",
-    "seederStorageTableName": "SequelizeData"
-```
+
 1. `sudo -i -u postgres` - открываем postgres
 1. `psql` - заходим в postgres под superUser
 1. `CREATE DATABASE название OWNER владелец` - создаём БД
@@ -61,11 +57,7 @@
     - **Если поменяли что-то в модели - меняем и в миграции**
 1.  Накатили миграцию `npx sequelize-cli db:migrate`
 1.  Если надо откатить `npx sequelize-cli db:migrate:undo:all`
-1.  Создали seeder командой `npx sequelize-cli seed:generate --name demo-user` (изменили под себя)
 
-## На что обратить внимание
-
-1.  Когда пишем seeder, поля `createdAt` и `updatedAt` нужно заполнить самому `new Date()`
 
 ### Связи
 
@@ -212,7 +204,22 @@ findOrder();
 
 ### Сиды
 Сиды заполняют таблицу данными
-Пример:
+
+1. Для того, чтобы sequelize следил за сидерами (не накатывались те сидеры, которые уже были добавлены в БД, аналогично миграциям),в файл `config.json`(`database.json`) надо добавить строчки:
+```
+    "seederStorage": "sequelize",
+    "seederStorageTableName": "SequelizeData"
+```
+
+1.  Создаётся seeder командой `npx sequelize-cli seed:generate --name demo-user` (наименование меняем под себя)
+2.  Запустить сидер `npx sequelize-cli db:seed:all`
+3.  Откатить сидер `npx sequelize-cli db:seed:undo`
+
+## На что обратить внимание
+
+1.  Когда пишем seeder, поля `createdAt` и `updatedAt` нужно заполнить самому `new Date()`
+
+Пример сидера:
 ``` 
 await queryInterface.bulkInsert(
       "Users",
@@ -229,7 +236,7 @@ await queryInterface.bulkInsert(
   },
 
 
-*из моего файла (почему-то не внесены  createdAt: new Date() и updatedAt: new Date()) ---
+*пример сидера из моего файла (почему-то не внесены  createdAt: new Date() и updatedAt: new Date()) ---
 
 module.exports = {
   async up(queryInterface, Sequelize) {
