@@ -228,7 +228,8 @@ await queryInterface.bulkInsert(
     );
   },
 
-*из моего файла (почему-то не внесены  createdAt: new Date() и updatedAt: new Date())Ж
+
+*из моего файла (почему-то не внесены  createdAt: new Date() и updatedAt: new Date()) ---
 
 module.exports = {
   async up(queryInterface, Sequelize) {
