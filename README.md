@@ -51,7 +51,7 @@
 `
 ## Что сделали
 
-1.  Создали модель командой `npx sequelize-cli model:generate --name User --attributes firstName:string,lastName:string,email:string` (изменили под себя)
+1.  Создали модель командой `npx sequelize-cli model:generate --name User --attributes firstName:string,lastName:string,age:integer,email:string` (изменили под себя, ГЛАВНОЕ - название модели с большой буквы в единственном числе)
     - Одновременно с этим создалась миграция
     - В Миграции прописали связи!!(см.внизу)
     - **Если поменяли что-то в модели - меняем и в миграции**
