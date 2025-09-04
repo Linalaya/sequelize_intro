@@ -34,7 +34,8 @@
 1. В файле `config.json`(в моём варианте - `database.json`) меняем данные для БД (username, password, database, dialect) на свои. Обратите внимание, что мы ввели разные данные для development и test
 
 
-!. psql -U postgres - на моём ноутбуке заходить под мои пользователем postgres так, пароль 5507
+!!! `psql -U postgres` - на моём ноутбуке заходить под мои пользователем postgres так, пароль 5507
+
 
 1. `sudo -i -u postgres` - открываем postgres
 1. `psql` - заходим в postgres под superUser
