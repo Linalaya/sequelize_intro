@@ -60,6 +60,7 @@
     - **Если поменяли что-то в модели - меняем и в миграции**
 1.  Накатили миграцию `npx sequelize-cli db:migrate`
 1.  Если надо откатить `npx sequelize-cli db:migrate:undo:all`
+2.  Если надо откатить только одну какую-то миграцию, то пишем npx sequelize-cli db:migrate:undo --name 20250918103127-new_column_in_book.js (т.е. после name наименование миграции)
 
 
 ### Связи
