@@ -27,11 +27,11 @@
  };
 ```
 
-(в .sequelizerc вместо config.json прописываю database.json - это позволяет создавать базу данных командой npx sequelize-cli db:create, а не через терминал)
+(в .sequelizerc вместо config.json прописываю database.json (а в последних проектах database.js !) - это позволяет создавать базу данных командой npx sequelize-cli db:create, а не через терминал)
 
 
 1. `npx sequelize-cli init` - создаём структуру для работы с sequelize
-1. В файле `config.json`(в моём варианте - `database.json`) меняем данные для БД (username, password, database, dialect) на свои. Обратите внимание, что мы ввели разные данные для development и test
+1. В файле `config.json`(в моём варианте - `database.json`) меняем данные для БД (username, password, database, dialect) на свои. (а в последних проектах, где database.js, прописываем эти данные в .env и в файле database.js используем через dotenv - require('dotenv').config();). Обратите внимание, что мы ввели разные данные для development и test
 
 
 !!! `psql -U postgres` - на моём ноутбуке заходить под мои пользователем postgres так, пароль 5507
