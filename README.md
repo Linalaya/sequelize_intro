@@ -240,7 +240,8 @@ await queryInterface.bulkInsert(
   },
 
 
-*пример сидера из моего файла (не внесены createdAt: new Date() и updatedAt: new Date()) --- вероятно потому, что в миграции этой можели в графах createdAt и updatedAt указано значение по умолчанию:
+*пример сидера из моего файла (не внесены createdAt: new Date() и updatedAt: new Date()) ---
+--- вероятно потому, что в миграции этой модели в графах createdAt и updatedAt указано значение по умолчанию:
 createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
